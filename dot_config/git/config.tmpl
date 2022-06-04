@@ -1,0 +1,16 @@
+[color "diff"]
+	whitespace = red reverse
+[fetch]
+	prune = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[log]
+	date = iso
+[push]
+	default = current
+[user]
+	name = {{ .user | quote }}
+	email = {{ .email | quote }}

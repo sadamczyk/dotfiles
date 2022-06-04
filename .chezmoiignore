@@ -1,0 +1,11 @@
+# Read by chezmoi when choosing repository files to copy to home directory.
+# https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
+
+*.gz
+LICENSE
+README.md
+
+# Ignore non-macOS files.
+{{ if ne .chezmoi.os "darwin" -}}
+dot_config/brewfile
+{{- end }}

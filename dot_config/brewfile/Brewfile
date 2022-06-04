@@ -1,0 +1,33 @@
+# Taps
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+tap "homebrew/core"
+
+# Packages to install
+brew "chezmoi"
+brew "fish"
+brew "gh"
+brew "git-lfs"
+brew "python@3.10"
+brew "global"
+brew "glow"
+brew "grep"
+brew "kakoune"
+brew "kubectx"
+brew "libmagic"
+brew "neovim"
+brew "qt"
+brew "poppler"
+brew "pstree"
+brew "ripgrep"
+brew "showkey"
+brew "tldr"
+brew "watch"
+brew "xsv"
+brew "yarn"
+
+# Casks to install
+cask "font-fira-code"
+cask "ukelele"
+cask "wezterm"
