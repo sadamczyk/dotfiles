@@ -1,0 +1,34 @@
+# Have to add this to /etc/zshenv: ZDOTDIR=$HOME/.config/zsh/
+
+export LANG=en_US.UTF-8
+export EDITOR='nvim'
+export CLICOLOR=1 # Make ls use colors by default
+export PATH="/usr/local/bin:$PATH"
+
+# Aliases
+alias l='ls -lh'
+alias ll='ls -lh'
+alias la='ls -lhA'
+alias d='docker'
+alias dc='docker-compose'
+alias dcu='docker-compose up -d'
+alias dcub='docker-compose up -d --build'
+alias dcb='docker-compose build'
+alias dcd='docker-compose down'
+alias dps='docker ps'
+alias vi="nvim"
+alias vim="nvim"
+
+# Functions
+# No arguments: `git status`
+# With arguments: acts like `git`
+g() {
+	if [[ $# -gt 0 ]]; then
+		git "$@"
+	else
+		git status
+	fi
+}
+
+# Add additional configs not tracked by chezmoi
+source ~/.config/zsh/local_zshrc
