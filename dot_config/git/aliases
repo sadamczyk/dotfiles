@@ -1,0 +1,56 @@
+# ! invokes /bin/sh command
+# if you define functions, you HAVE to end the command inside of it with ; and another ; after the function definition!
+
+[alias]
+    # Lists aliases.
+    aliases = config --get-regexp ^alias\\.
+
+    # Amends the currently staged files to the latest commit.
+    amend = commit --amend --reuse-message=HEAD
+
+    # Lists all branches.
+    br = branch
+
+    # Shows local and remote branches.
+    bra = branch -a
+
+    c = commit -m
+    co = checkout
+    cob = checkout -b
+    cp = cherry-pick
+    d = diff
+
+    # Removes branches that have been merged with master (delete merged).
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
+
+    # Switches to a branch, creating it if necessary.
+    go = "!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f"
+
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+
+    p = pull
+    pu = push
+    puf = push -f
+
+    # Get the main branch, good enough for 99% of cases
+    m = !git branch | cut -c 3- | grep -E '^master$|^main$'
+
+    # Rebases
+    rb = rebase -i
+    rbm = !git rebase -i $( git m )
+
+    # Reset
+    rh = "!f() { git reset --hard ${1-HEAD}; }; f"
+    rs = "!f() { git reset --soft ${1-HEAD~}; }; f"
+
+    s = status -sb
+    size = git count-objects -v --human-readable # Displays repo disk consumption
+    sync = !git pull --rebase && git push # Brings in remote changes and syncs back.
+
+    # Save savepoint.
+    save = !git add -A && git commit -m 'SAVEPOINT'
+    # Restore savepoint.
+    restore = "!f() { rev=$(git rev-parse ${1-HEAD}); git add -A && git commit --allow-empty -qm 'RESTORE SAVEPOINT' && git reset $rev --hard; }; f"
+
+    unstage = reset -q HEAD -- # Unstages all given files.
+    wip = commit -am "WIP"

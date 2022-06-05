@@ -1,5 +1,7 @@
 [color "diff"]
 	whitespace = red reverse
+[core]
+	excludesfile = ignore_global # Store global exclusions into a custom file.
 [fetch]
 	prune = true
 [filter "lfs"]
@@ -7,6 +9,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[include]
+	path = aliases
 [log]
 	date = iso
 [push]
@@ -14,3 +18,14 @@
 [user]
 	name = {{ .name | quote }}
 	email = {{ .email | quote }}
+
+# TODO Test if I like these settings:
+[help]
+	# Correct and execute mistyped commands.
+	autocorrect = 1
+[mergetool]
+	# Avoid saving an `.orig` backup file after a merge.
+	keepBackup = false
+[rebase]
+	# Create a temporary stash entry before the operation begins.
+	autostash = true
