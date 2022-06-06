@@ -17,7 +17,8 @@ if status is-interactive
     fish_config theme choose ayu\ Light
 
     # Exports
-    set -gx LESS "-x4"
+    # -R for color, -x4 for tabs = 4 spaces
+    set -gx LESS "-Rx4"
 end
 
 export PATH="/usr/local/bin:$PATH"
