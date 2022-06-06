@@ -5,6 +5,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/core"
 
 # Packages to install
+brew "btop"
 brew "chezmoi"
 brew "fish"
 brew "gh"
