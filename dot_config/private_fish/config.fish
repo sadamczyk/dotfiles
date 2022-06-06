@@ -14,7 +14,7 @@ if status is-interactive
     abbr -a -U -- dps 'docker ps'
 
     # Color theme
-    fish_config theme choose ayu\ Light
+    fish_config theme choose Bay\ Cruise
 
     # Exports
     # -R for color, -x4 for tabs = 4 spaces
