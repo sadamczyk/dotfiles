@@ -1,6 +1,7 @@
 if status is-interactive
     # General abbreviations
     abbr -a -U -- l ll
+    abbr -a -U -- conf cd ~/.config/
 
     ## Docker
     abbr -a -U -- d docker
@@ -10,6 +11,9 @@ if status is-interactive
     abbr -a -U -- dcb 'docker-compose build'
     abbr -a -U -- dcd 'docker-compose down'
     abbr -a -U -- dps 'docker ps'
+
+    # Color theme
+    fish_config theme choose ayu\ Light
 end
 
 export PATH="/usr/local/bin:$PATH"
