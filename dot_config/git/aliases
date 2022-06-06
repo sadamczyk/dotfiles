@@ -19,6 +19,7 @@
     cob = checkout -b
     cp = cherry-pick
     d = diff
+    ds = diff --staged
 
     # Removes branches that have been merged with master (delete merged).
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
