@@ -2,6 +2,7 @@ if status is-interactive
     # General abbreviations
     abbr -a -U -- l ll
     abbr -a -U -- conf cd ~/.config/
+    abbr -a -U -- chm chezmoi
 
     ## Docker
     abbr -a -U -- d docker
@@ -14,6 +15,9 @@ if status is-interactive
 
     # Color theme
     fish_config theme choose ayu\ Light
+
+    # Exports
+    set -gx LESS "-x4"
 end
 
 export PATH="/usr/local/bin:$PATH"

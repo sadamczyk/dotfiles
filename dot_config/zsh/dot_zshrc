@@ -2,6 +2,7 @@ export LANG=en_US.UTF-8
 export EDITOR='nvim'
 export CLICOLOR=1 # Make ls use colors by default
 export PATH="/usr/local/bin:$PATH"
+export LESS="-x4" # Use 4 spaces as tabs, not 8
 
 # Aliases
 alias l='ls -lh'
