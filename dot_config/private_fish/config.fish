@@ -6,11 +6,11 @@ if status is-interactive
 
     ## Docker
     abbr -a -U -- d docker
-    abbr -a -U -- dc docker-compose
-    abbr -a -U -- dcu 'docker-compose up -d'
-    abbr -a -U -- dcub 'docker-compose up --build -d'
-    abbr -a -U -- dcb 'docker-compose build'
-    abbr -a -U -- dcd 'docker-compose down'
+    abbr -a -U -- dc docker compose
+    abbr -a -U -- dcu 'docker compose up -d'
+    abbr -a -U -- dcub 'docker compose up --build -d'
+    abbr -a -U -- dcb 'docker compose build'
+    abbr -a -U -- dcd 'docker compose down'
     abbr -a -U -- dps 'docker ps'
 
     # Color theme
