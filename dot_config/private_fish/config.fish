@@ -3,6 +3,7 @@ if status is-interactive
     abbr -a -U -- l ll
     abbr -a -U -- conf cd ~/.config/
     abbr -a -U -- chm chezmoi
+    abbr -a -U -- g git
 
     ## Docker
     abbr -a -U -- d docker
