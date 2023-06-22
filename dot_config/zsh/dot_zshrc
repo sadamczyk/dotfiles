@@ -6,8 +6,7 @@ export LESS="-Rx4" # -R for color, -x4 for tabs = 4 spaces
 
 # Aliases
 alias l='ls -lh'
-alias ll='ls -lh'
-alias la='ls -lhA'
+alias ll='ls -lAh'
 alias d='docker'
 alias dc='docker compose'
 alias dcu='docker compose up -d'
