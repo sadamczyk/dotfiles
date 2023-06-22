@@ -3,6 +3,7 @@ export EDITOR='nvim'
 export CLICOLOR=1 # Make ls use colors by default
 export PATH="/usr/local/bin:$PATH"
 export LESS="-Rx4" # -R for color, -x4 for tabs = 4 spaces
+export PROMPT="%? %~ %% "
 
 # Aliases
 alias l='ls -lh'
