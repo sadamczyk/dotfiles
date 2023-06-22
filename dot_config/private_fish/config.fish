@@ -21,5 +21,7 @@ if status is-interactive
     set -gx LESS "-Rx4"
 end
 
+export PATH="/usr/local/bin:$PATH"
+
 # Load additional config not tracked by chezmoi
 source ~/.config/fish/local_config.fish
