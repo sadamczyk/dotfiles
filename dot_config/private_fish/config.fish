@@ -1,8 +1,11 @@
 if status is-interactive
-    # General abbreviations 
+    # General abbreviations
     abbr -a -- conf cd ~/.config/
     abbr -a -- chm chezmoi
     abbr -a -- g git
+    abbr -a -- e hx
+    abbr -a -- vi nvim
+    abbr -a -- vim nvim
 
     ## Docker
     abbr -a -- d docker
@@ -22,6 +25,17 @@ if status is-interactive
 end
 
 export PATH="/usr/local/bin:$PATH"
+
+# TODO Check if this only works / is necessary on linux?
+export DOCKER_HOST="unix:///home/sadamczyk/.docker/desktop/docker.sock"
+
+# https://rsteube.github.io/carapace-bin/setup.html
+mkdir -p ~/.config/fish/completions
+carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
+carapace _carapace | source
+
+# https://starship.rs/
+starship init fish | source
 
 # Load additional config not tracked by chezmoi
 source ~/.config/fish/local_config.fish
