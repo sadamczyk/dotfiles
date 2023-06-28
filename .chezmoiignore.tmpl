@@ -1,5 +1,6 @@
 # Read by chezmoi when choosing repository files to copy to home directory.
 # https://www.chezmoi.io/reference/special-files-and-directories/chezmoiignore/
+# These are target file names, not source filenames!
 
 *.gz
 LICENSE
@@ -7,7 +8,7 @@ README.md
 
 # Ignore non-macOS files.
 {{ if ne .chezmoi.os "darwin" -}}
-dot_config/brewfile
-dot_config/zsh/
-dot_zshenv
+.config/brewfile
+.config/zsh
+.zshenv
 {{- end }}
