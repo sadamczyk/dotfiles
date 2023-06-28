@@ -14,7 +14,8 @@
     # Shows local and remote branches.
     bra = branch -a
 
-    c = commit -m
+    cm = commit -m
+    cam = commit -am
     co = checkout
     cob = checkout -b
     cp = cherry-pick
