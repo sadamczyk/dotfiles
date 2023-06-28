@@ -8,4 +8,6 @@ README.md
 # Ignore non-macOS files.
 {{ if ne .chezmoi.os "darwin" -}}
 dot_config/brewfile
+dot_config/zsh/
+dot_zshenv
 {{- end }}
