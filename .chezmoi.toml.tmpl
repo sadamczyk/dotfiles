@@ -1,9 +1,11 @@
 {{- $email := promptString "Git email address for the author/committer" }}
 {{- $name := promptString "Git username for the author/committer" "sadamczyk" }}
+{{- $wezterm := false -}}{{/* true if this machine uses wezterm as terminal */}}
 
 [data]
     email = {{ $email | quote }}
     name = {{ $name | quote }}
+    wezterm = {{ $wezterm }}
 
 [cd]
     command = "fish"

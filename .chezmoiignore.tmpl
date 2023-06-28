@@ -12,3 +12,7 @@ README.md
 .config/zsh
 .zshenv
 {{- end }}
+
+{{ if not .wezterm -}}
+.config/wezterm
+{{- end }}
