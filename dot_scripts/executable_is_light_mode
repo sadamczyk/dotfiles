@@ -1,0 +1,12 @@
+#!/bin/sh
+# Exit codes: 0 = light mode, 1 = dark mode, 2+ = no clue
+set -e
+
+color_scheme=$(gsettings get org.gnome.desktop.interface color-scheme)
+if [ "$color_scheme" = "'default'" ]; then # The single quotes are part of the string!
+  exit 0;
+elif [ "$color_scheme" = "'prefer-dark'" ]; then
+  exit 1;
+fi
+
+exit 127;
