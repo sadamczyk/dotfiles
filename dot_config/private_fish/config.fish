@@ -1,7 +1,7 @@
 if status is-interactive
     # General abbreviations
     abbr -a -- conf cd ~/.config/
-    abbr -a -- chm chezmoi
+    abbr -a -- cm chezmoi
     abbr -a -- g git
     abbr -a -- e hx
     abbr -a -- vi nvim
@@ -24,6 +24,7 @@ if status is-interactive
     set -gx LESS "-Rx4"
 end
 
+export EDITOR="hx"
 export PATH="/usr/local/bin:$PATH"
 
 # TODO Check if this only works / is necessary on linux?
