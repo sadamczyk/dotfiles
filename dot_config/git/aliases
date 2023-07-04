@@ -16,6 +16,7 @@
 
     cm = commit -m
     cam = commit -am
+    cf = commit --fixup
     co = checkout
     cob = checkout -b
     cp = cherry-pick
@@ -40,6 +41,7 @@
     # Rebases
     rb = rebase -i
     rbm = !git rebase -i $( git m )
+    rbo = !git rebase -i "origin/$( git m )"
 
     # Reset
     rh = "!f() { git reset --hard ${1-HEAD}; }; f"
