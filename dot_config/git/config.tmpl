@@ -4,8 +4,12 @@
 	excludesfile = ~/.config/git/ignore_global # Store global exclusions into a custom file.
 	pager = delta
 [delta]
-	navigate = true  # use n and N to move between diff sections
-	light = true    # set to true if you're in a terminal w/ a light background color
+	navigate = true # use n and N to move between diff sections
+	{{ if eq "light" (output "get_color_scheme") -}}
+	light = true
+	{{- else -}}
+	light = false
+	{{- end }}
 	tabs = 4
 # syntax-theme = ansi # so colors for light and dark theme of terminal? https://github.com/dandavison/delta/issues/447
 [diff]
