@@ -25,7 +25,7 @@ if status is-interactive
 end
 
 export EDITOR="hx"
-export PATH="/usr/local/bin:$PATH"
+export PATH="$HOME/.scripts:/usr/local/bin:$PATH"
 
 # TODO Check if this only works / is necessary on linux?
 export DOCKER_HOST="unix:///home/sadamczyk/.docker/desktop/docker.sock"
