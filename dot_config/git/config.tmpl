@@ -6,6 +6,11 @@
 [delta]
 	navigate = true # use n and N to move between diff sections
 	{{ if eq .chezmoi.os "darwin" -}}
+    {{- if eq "Dark" (output "sh" "-c" "defaults read -g AppleInterfaceStyle 2>/dev/null || true" | trim) -}}
+	light = false
+	{{- else -}}
+	light = true
+	{{- end -}}
 	{{- else -}}
 	{{- if eq "prefer-dark" (output "gsettings" "get" "org.gnome.desktop.interface" "color-scheme" | trim | trimAll "'") -}}
 	light = false
