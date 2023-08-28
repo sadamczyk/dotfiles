@@ -1,0 +1,17 @@
+{{ if eq .chezmoi.os "darwin" -}}
+{{- if eq "Dark" (output "sh" "-c" "defaults read -g AppleInterfaceStyle 2>/dev/null || true" | trim) -}}
+theme = "solarized_dark"
+{{- else -}}
+theme = "solarized_light"
+{{- end -}}
+{{- else -}}
+{{- if eq "prefer-dark" (output "gsettings" "get" "org.gnome.desktop.interface" "color-scheme" | trim | trimAll "'") -}}
+theme = "solarized_dark"
+{{- else -}}
+theme = "solarized_light"
+{{- end -}}
+{{- end }}
+
+[editor.file-picker]
+hidden = false # Show hidden files (vendor etc.)
+git-ignore = false
