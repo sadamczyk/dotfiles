@@ -3,6 +3,7 @@ if status is-interactive
     abbr -a -- conf cd ~/.config/
     abbr -a -- cm chezmoi
     abbr -a -- g git
+    abbr -a -- gs git status -sb
     abbr -a -- e hx
     abbr -a -- vi nvim
     abbr -a -- vim nvim

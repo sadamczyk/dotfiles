@@ -47,7 +47,7 @@
     rh = "!f() { git reset --hard ${1-HEAD}; }; f"
     rs = "!f() { git reset --soft ${1-HEAD~}; }; f"
 
-    s = status -sb
+    s = status
     size = git count-objects -v --human-readable # Displays repo disk consumption
     sync = !git pull --rebase && git push # Brings in remote changes and syncs back.
 
