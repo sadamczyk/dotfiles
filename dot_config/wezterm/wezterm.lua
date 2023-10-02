@@ -5,7 +5,7 @@ local wezterm = require 'wezterm';
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   default_prog = {"wsl.exe", "--exec", "/usr/bin/fish"}
 else
-  default_prog = {"/usr/local/bin/fish"}
+  default_prog = {"fish"}
 end
 
 -- Automatically switch colorscheme based on OS appearance
