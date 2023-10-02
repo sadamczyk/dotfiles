@@ -28,9 +28,6 @@ end
 export EDITOR="hx"
 export PATH="$HOME/.scripts:/usr/local/bin:$PATH"
 
-# TODO Check if this only works / is necessary on linux?
-export DOCKER_HOST="unix:///home/sadamczyk/.docker/desktop/docker.sock"
-
 # https://rsteube.github.io/carapace-bin/setup.html
 mkdir -p ~/.config/fish/completions
 carapace --list | awk '{print $1}' | xargs -I{} touch ~/.config/fish/completions/{}.fish # disable auto-loaded completions (#185)
