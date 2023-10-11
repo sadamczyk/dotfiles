@@ -12,9 +12,9 @@ end
 -- https://wezfurlong.org/wezterm/config/lua/window/get_appearance.html
 function scheme_for_appearance(appearance)
   if appearance:find("Dark") then
-    return "Afterglow"
+    return "Solarized (dark) (terminal.sexy)"
   else
-    return "Alabaster"
+    return "Solarized (light) (terminal.sexy)"
   end
 end
 
@@ -31,6 +31,9 @@ end)
 return {
   default_prog = default_prog,
   exit_behavior = "Close", -- remove after new release, "CloseOnCleanExit" is the default!
+  font_size = 11,
+  font = wezterm.font 'DejaVu Sans Mono',
+  -- harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' }, -- Disables ligatures, yuck. TODO: Is this needed? I think DejaVu Sans Mono doesn't support them anyway.
   initial_cols = 500,
   initial_rows = 500,
   window_close_confirmation = "NeverPrompt",
