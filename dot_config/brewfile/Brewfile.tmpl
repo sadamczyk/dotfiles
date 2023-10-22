@@ -1,10 +1,12 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "rsteube/tap"
+{{ if eq .chezmoi.os "darwin" -}}
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
 cask "ukelele"
+{{- end -}}
 brew "bitwarden-cli"
 brew "btop"
 brew "chezmoi"
