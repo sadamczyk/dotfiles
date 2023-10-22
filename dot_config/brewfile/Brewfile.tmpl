@@ -6,7 +6,11 @@ tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 cask "font-fira-code"
 cask "ukelele"
-{{- end -}}
+cask "wezterm"
+{{- else -}}
+tap "wez/wezterm-linuxbrew"
+brew "wezterm"
+{{- end }}
 brew "bitwarden-cli"
 brew "btop"
 brew "chezmoi"
