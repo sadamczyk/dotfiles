@@ -10,6 +10,8 @@ README.md
 {{ if ne .chezmoi.os "darwin" -}}
 .config/zsh
 .zshenv
+{{- else if ne .chezmoi.osRelease.id "fedora" -}}
+.chezmoiscripts/run_once_after_fedora_gnome_setup.sh
 {{- end }}
 
 {{ if not .wezterm -}}
