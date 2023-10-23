@@ -31,6 +31,7 @@
 
     # Show / Log
     sp = "!f() { git show -p ${1-HEAD}; }; f"
+    lp = "!f() { git log -p ${1-HEAD}; }; f"
     l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 
     p = pull
