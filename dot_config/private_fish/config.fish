@@ -39,5 +39,3 @@ starship init fish | source
 # Load additional config not tracked by chezmoi
 source ~/.config/fish/local_config.fish
 
-# Flatpak aliases
-alias wezterm="flatpak run org.wezfurlong.wezterm"
