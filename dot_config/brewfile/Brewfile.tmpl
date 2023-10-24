@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "rsteube/tap"
+tap "lindell/multi-gitter"
 {{ if eq .chezmoi.os "darwin" -}}
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -39,3 +40,4 @@ brew "vscode-langservers-extracted"
 brew "xsv"
 brew "zoxide"
 brew "rsteube/tap/carapace"
+brew "lindell/multi-gitter/multi-gitter"
