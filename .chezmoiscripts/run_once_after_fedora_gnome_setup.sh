@@ -42,3 +42,7 @@ EOM \
   && sudo dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin \
   && gcloud init
 
+# Programs that need to be installed manually
+open https://slack.com/intl/de-de/downloads/linux
+open https://www.jetbrains.com/de-de/phpstorm/download/#section=linux
+
