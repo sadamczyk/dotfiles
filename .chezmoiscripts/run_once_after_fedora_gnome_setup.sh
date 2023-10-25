@@ -5,6 +5,7 @@ sudo dnf upgrade --refresh -y
 test -f /usr/bin/open || sudo ln -s /usr/bin/xdg-open /usr/bin/open
 
 sudo dnf copr enable -y wezfurlong/wezterm-nightly
+sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install -y \
   geary \
   google-chrome-stable \
