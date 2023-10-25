@@ -27,6 +27,7 @@ end
 
 export EDITOR="hx"
 export PATH="$HOME/.scripts:/usr/local/bin:$PATH"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # https://rsteube.github.io/carapace-bin/setup.html
 mkdir -p ~/.config/fish/completions
