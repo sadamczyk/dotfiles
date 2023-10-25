@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo dnf upgrade --refresh -y
+
 test -f /usr/bin/open || sudo ln -s /usr/bin/xdg-open /usr/bin/open
 
 sudo dnf copr enable -y wezfurlong/wezterm-nightly
@@ -37,8 +39,8 @@ enabled=1
 gpgcheck=1
 repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
-EOM \
-  && sudo dnf install -y libxcrypt-compat.x86_64 \
+EOM
+sudo dnf install -y libxcrypt-compat.x86_64 \
   && sudo dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin \
   && gcloud init
 
