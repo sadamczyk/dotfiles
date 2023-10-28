@@ -23,7 +23,7 @@ rm dbeaver-ce-latest-stable.x86_64.rpm
 dnf -y install dnf-plugins-core \
   && dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo \
   && dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-  && sudo usermod -aG docker $USER \
+  && usermod -aG docker $USER \
   && systemctl enable docker.service \
   && systemctl enable containerd.service \
   && sed -i 's/LimitNOFILE=infinity/LimitNOFILE=1024/' /usr/lib/systemd/system/docker.service
@@ -40,12 +40,12 @@ repo_gpgcheck=0
 gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 dnf install -y libxcrypt-compat.x86_64 \
-  && dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin 
-  && (test -d ~/.config/gcloud/ || gcloud init)
-
-# Programs that need to be installed manually
-xdg-open https://slack.com/intl/de-de/downloads/linux
-xdg-open https://www.jetbrains.com/de-de/phpstorm/download/#section=linux
+  && dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin
+test -d /home/$SUDO_USER/.config/gcloud/ || sudo -u $SUDO_USER gcloud init
 
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+
+# Programs that need to be installed manually
+sudo -u $SUDO_USER google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
+sudo -u $SUDO_USER google-chrome https://www.jetbrains.com/de-de/phpstorm/download/#section=linux 2>/dev/null &
 
