@@ -52,6 +52,9 @@ dnf install -y libxcrypt-compat.x86_64 \
   && dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin 
   && (test -d ~/.config/gcloud/ || gcloud init)
 
+# Exit root shell
+exit
+
 # Programs that need to be installed manually
 xdg-open https://slack.com/intl/de-de/downloads/linux
 xdg-open https://www.jetbrains.com/de-de/phpstorm/download/#section=linux
