@@ -15,7 +15,7 @@ sudo dnf install -y \
   google-chrome-stable \
   wezterm
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 # Install DBeaver
 curl -LO https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm
@@ -50,6 +50,6 @@ sudo dnf install -y libxcrypt-compat.x86_64 \
   # && gcloud init
 
 # Programs that need to be installed manually
-open https://slack.com/intl/de-de/downloads/linux
-open https://www.jetbrains.com/de-de/phpstorm/download/#section=linux
+xdg-open https://slack.com/intl/de-de/downloads/linux
+xdg-open https://www.jetbrains.com/de-de/phpstorm/download/#section=linux
 
