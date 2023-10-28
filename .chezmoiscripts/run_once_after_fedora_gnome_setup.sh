@@ -18,8 +18,6 @@ dnf install -y \
   google-chrome-stable \
   wezterm
 
-flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
 # Install DBeaver
 curl -LO https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm
 dnf localinstall -y dbeaver-ce-latest-stable.x86_64.rpm
@@ -58,4 +56,6 @@ exit
 # Programs that need to be installed manually
 xdg-open https://slack.com/intl/de-de/downloads/linux
 xdg-open https://www.jetbrains.com/de-de/phpstorm/download/#section=linux
+
+flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 
