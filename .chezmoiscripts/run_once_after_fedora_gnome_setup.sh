@@ -3,10 +3,6 @@
 # Switch to root
 sudo su
 
-# Ask for password once and then keep alive
-# https://serverfault.com/a/833888
-# trap "exit" INT TERM; trap "kill 0" EXIT; -v || exit $?; sleep 1; while true; do sleep 60; -nv; done 2>/dev/null &
-
 dnf upgrade --refresh -y
 
 test -f /usr/bin/open || ln -s /usr/bin/xdg-open /usr/bin/open
