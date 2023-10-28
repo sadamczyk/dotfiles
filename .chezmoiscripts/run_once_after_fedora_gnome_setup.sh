@@ -50,7 +50,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 dnf install -y libxcrypt-compat.x86_64 \
   && dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin 
-  # && gcloud init
+  && (test -d ~/.config/gcloud/ || gcloud init)
 
 # Programs that need to be installed manually
 xdg-open https://slack.com/intl/de-de/downloads/linux
