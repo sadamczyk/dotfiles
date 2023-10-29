@@ -7,6 +7,7 @@ if status is-interactive
     abbr -a -- e hx
     abbr -a -- vi nvim
     abbr -a -- vim nvim
+    abbr -a -- diff delta
 
     ## Docker
     abbr -a -- d docker
