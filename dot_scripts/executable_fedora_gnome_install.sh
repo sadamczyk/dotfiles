@@ -45,6 +45,9 @@ test -d /home/$SUDO_USER/.config/gcloud/ || sudo -u $SUDO_USER gcloud init
 
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 
+# GNOME settings
+sudo -u $SUDO_USER gsettings set org.gnome.desktop.input-sources xkb-options "['caps:backspace']" # Set Capslock as Escape
+
 # Programs that need to be installed manually
 sudo -u $SUDO_USER google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
 sudo -u $SUDO_USER google-chrome https://www.jetbrains.com/de-de/phpstorm/download/#section=linux 2>/dev/null &
