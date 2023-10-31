@@ -9,7 +9,8 @@ dnf config-manager --set-enabled google-chrome
 dnf install -y \
   geary \
   google-chrome-stable \
-  wezterm
+  wezterm \
+  python3-pip
 
 # Install DBeaver
 curl -LO https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm
