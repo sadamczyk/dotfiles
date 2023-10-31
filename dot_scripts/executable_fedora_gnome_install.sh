@@ -59,6 +59,8 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@r
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@romainvigier.fr/schemas/ set org.gnome.shell.extensions.nightthemeswitcher.commands enabled true
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@romainvigier.fr/schemas/ set org.gnome.shell.extensions.nightthemeswitcher.gtk-variants enabled true
 
+sudo -u $SUDO_USER bash -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
+
 # Programs that need to be installed manually
 sudo -u $SUDO_USER google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
 sudo -u $SUDO_USER google-chrome https://www.jetbrains.com/de-de/phpstorm/download/#section=linux 2>/dev/null &
