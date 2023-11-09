@@ -39,6 +39,7 @@ return {
   window_close_confirmation = "NeverPrompt",
   keys = {
     {key="w", mods="CTRL|SHIFT", action=wezterm.action{CloseCurrentTab={confirm=false}}}, -- don't confirm closing tabs
+    {key="d", mods="CTRL|SHIFT", action=wezterm.action.SplitHorizontal{domain = 'CurrentPaneDomain'}},
   },
 }
 
