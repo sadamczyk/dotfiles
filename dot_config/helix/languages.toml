@@ -2,3 +2,10 @@
 name = "markdown"
 formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
 auto-format = true
+
+[language-server.phpactor]
+command = "phpactor"
+args = [ "language-server" ]
+[[language]]
+name = "php"
+language-servers = [ "phpactor" ]
