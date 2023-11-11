@@ -6,11 +6,17 @@ test -f /usr/bin/open || ln -s /usr/bin/xdg-open /usr/bin/open
 
 dnf copr enable -y wezfurlong/wezterm-nightly
 dnf config-manager --set-enabled google-chrome
+dnf groupinstall -y 'Development Tools'
 dnf install -y \
   geary \
   google-chrome-stable \
   wezterm \
-  python3-pip
+  python3-pip \
+  fish \
+  procps-ng curl file git # brew dependencies https://docs.brew.sh/Homebrew-on-Linux#requirements
+
+# Install brew
+NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install DBeaver
 curl -LO https://dbeaver.io/files/dbeaver-ce-latest-stable.x86_64.rpm

@@ -2,14 +2,10 @@
 
 ## Installation
 
-- Install [brew](https://brew.sh/)
-- Install [chezmoi](https://www.chezmoi.io/)
-- Initialize personal dotfiles
+Run this command.
+Will require some user action/authentication at the start and the very end
+of the installation scripts, but should otherwise run non-interactively.
 
 ```sh
-sudo -v \
-  && NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" \
-  && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" \
-  && brew install chezmoi \
-  && chezmoi init --apply sadamczyk
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply sadamczyk
 ```
