@@ -71,4 +71,5 @@ test -d /home/$SUDO_USER/.config/gcloud/ || sudo -u $SUDO_USER gcloud init
 # Programs that need to be installed manually
 sudo -u $SUDO_USER google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
 sudo -u $SUDO_USER google-chrome https://www.jetbrains.com/de-de/phpstorm/download/#section=linux 2>/dev/null &
+sleep 5 # Give browser a moment to open
 
