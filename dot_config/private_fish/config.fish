@@ -1,21 +1,21 @@
 if status is-interactive
     # General abbreviations
-    abbr -a -- conf cd ~/.config/
     abbr -a -- cm chezmoi
+    abbr -a -- conf cd ~/.config/
+    abbr -a -- diff delta
+    abbr -a -- e hx
     abbr -a -- g git
     abbr -a -- gs git status -sb
-    abbr -a -- e hx
     abbr -a -- vi nvim
     abbr -a -- vim nvim
-    abbr -a -- diff delta
 
     ## Docker
     abbr -a -- d docker
     abbr -a -- dc docker compose
-    abbr -a -- dcu 'docker compose up -d'
-    abbr -a -- dcub 'docker compose up --build -d'
     abbr -a -- dcb 'docker compose build'
     abbr -a -- dcd 'docker compose down'
+    abbr -a -- dcu 'docker compose up -d'
+    abbr -a -- dcub 'docker compose up --build -d'
     abbr -a -- dps 'docker ps'
 
     # Color theme
