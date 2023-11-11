@@ -45,7 +45,6 @@ gpgkey=https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOM
 dnf install -y libxcrypt-compat.x86_64 \
   && dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin
-test -d /home/$SUDO_USER/.config/gcloud/ || sudo -u $SUDO_USER gcloud init
 
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -64,6 +63,10 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@r
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@romainvigier.fr/schemas/ set org.gnome.shell.extensions.nightthemeswitcher.gtk-variants enabled true
 
 sudo -u $SUDO_USER bash -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
+
+# Interactive / manual commands at the end
+clear
+test -d /home/$SUDO_USER/.config/gcloud/ || sudo -u $SUDO_USER gcloud init
 
 # Programs that need to be installed manually
 sudo -u $SUDO_USER google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
