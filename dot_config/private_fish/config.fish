@@ -6,6 +6,7 @@ if status is-interactive
     abbr -a -- e hx
     abbr -a -- g git
     abbr -a -- gs git status -sb
+    abbr -a -- lg lazygit
     abbr -a -- vi nvim
     abbr -a -- vim nvim
 
