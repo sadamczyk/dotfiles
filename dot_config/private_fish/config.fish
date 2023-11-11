@@ -23,8 +23,8 @@ if status is-interactive
     fish_config theme choose Bay\ Cruise
 
     # Exports
-    # -R for color, -x4 for tabs = 4 spaces
-    set -gx LESS "-Rx4"
+    # -i for smartcase search, -R for color, -x4 for tabs = 4 spaces
+    set -gx LESS "-iRx4"
 end
 
 export EDITOR="hx"
