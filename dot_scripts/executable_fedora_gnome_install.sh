@@ -65,7 +65,7 @@ gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@r
 sudo -u $SUDO_USER bash -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
 
 # Interactive / manual commands at the end
-clear
+# clear
 test -d /home/$SUDO_USER/.config/gcloud/ || sudo -u $SUDO_USER gcloud init
 
 # Programs that need to be installed manually
