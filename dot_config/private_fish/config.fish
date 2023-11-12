@@ -40,5 +40,5 @@ carapace _carapace | source
 starship init fish | source
 
 # Load additional config not tracked by chezmoi
-source ~/.config/fish/local_config.fish
+test -e ~/.config/fish/local_config.fish && source ~/.config/fish/local_config.fish
 
