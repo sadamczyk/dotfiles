@@ -6,7 +6,7 @@ sudo ~/.scripts/fedora_gnome_install_root.sh
 {{- end }}
 
 # Install brew
-sudo -v && NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+command -v brew >/dev/null || { sudo -v && NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
 source ~/.bash_profile
 
 # Setup gh-cli
@@ -14,5 +14,5 @@ brew bundle --file=.config/brewfile/Brewfile
 gh auth status >/dev/null || gh auth login
 
 # Install fisher
-fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update'
+fish -c 'type -q fisher >/dev/null || begin; curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update; end'
 
