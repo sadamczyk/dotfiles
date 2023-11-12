@@ -7,4 +7,8 @@ sudo ~/.scripts/fedora_gnome_install_root.sh
 
 # Install brew
 sudo -v && NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+source ~/.bash_profile
 
+# Setup gh-cli
+brew install gh
+gh auth login
