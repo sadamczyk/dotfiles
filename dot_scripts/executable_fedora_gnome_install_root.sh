@@ -34,7 +34,7 @@ dnf -y install dnf-plugins-core \
 
 # Install Google Cloud CLI
 # https://cloud.google.com/sdk/docs/install-sdk?hl=de#rpm
-tee -a /etc/yum.repos.d/google-cloud-sdk.repo << EOM
+tee /etc/yum.repos.d/google-cloud-sdk.repo << EOM
 [google-cloud-cli]
 name=Google Cloud CLI
 baseurl=https://packages.cloud.google.com/yum/repos/cloud-sdk-el8-x86_64
