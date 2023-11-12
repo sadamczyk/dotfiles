@@ -8,7 +8,6 @@ gsettings set org.gnome.desktop.input-sources xkb-options "['caps:backspace']" #
 pip3 install --upgrade gnome-extensions-cli
 
 # Interactive / manual commands at the end
-# clear
 # The prompt for the installation of the GNOME extensions times out quite quickly,
 # so run gcloud init first instead, since it also requires confirmation, but doesn't timeout.
 # Gives some time to come back to the machine after all the long previous installation steps
