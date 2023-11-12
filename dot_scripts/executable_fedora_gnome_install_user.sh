@@ -27,7 +27,9 @@ gext update --install -y \
   }
 
 # Programs that need to be installed manually
-google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
-google-chrome https://www.jetbrains.com/de-de/phpstorm/download/#section=linux 2>/dev/null &
-sleep 5 # Give browser a moment to open
+command -v slack >/dev/null || {
+  google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
+  google-chrome https://www.jetbrains.com/de-de/phpstorm/download/#section=linux 2>/dev/null &
+  sleep 5 # Give browser a moment to open
+}
 
