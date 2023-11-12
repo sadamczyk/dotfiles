@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+source ~/.bash_profile
+
 # Install all brew packages
 # brewfile hash: {{ include "dot_config/brewfile/Brewfile.tmpl" | sha256sum }}
 brew bundle --file=.config/brewfile/Brewfile
