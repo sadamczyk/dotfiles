@@ -19,3 +19,10 @@ line-number = "relative"
 [editor.file-picker]
 hidden = false # Show hidden files (vendor etc.)
 git-ignore = false
+
+[keys.normal]
+# Might not be needed in the future? https://github.com/helix-editor/helix/issues/3001
+A-d = "delete_selection"
+d = "delete_selection_noyank"
+A-c = "change_selection"
+c = "change_selection_noyank"
