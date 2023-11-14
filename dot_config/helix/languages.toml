@@ -1,11 +1,45 @@
+# Terraform / HCL
+[language-server.terraform-ls]
+command = "terraform-ls"
+args = ["serve"]
+
+[[language]]
+name = "hcl"
+scope = "source.hcl"
+injection-regex = "(hcl|tf|nomad)"
+language-id = "terraform"
+file-types = ["hcl", "tf", "nomad"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "terraform-ls" ]
+auto-format = true
+
+[[grammar]]
+name = "hcl"
+source = { git = "https://github.com/MichaHoffmann/tree-sitter-hcl", rev = "v1.1.0" }
+
+[[language]]
+name = "tfvars"
+scope = "source.tfvars"
+language-id = "terraform-vars"
+file-types = ["tfvars"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "terraform-ls" ]
+auto-format = true
+grammar = "hcl"
+
+# Markdown
 [[language]]
 name = "markdown"
 formatter = { command = "dprint", args = ["fmt", "--stdin", "md"]}
 auto-format = true
 
+# PHP
 [language-server.phpactor]
 command = "phpactor"
 args = [ "language-server" ]
 [[language]]
 name = "php"
 language-servers = [ "phpactor" ]
+
