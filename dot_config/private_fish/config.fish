@@ -4,6 +4,7 @@ if status is-interactive
     abbr -a -- conf cd ~/.config/
     abbr -a -- diff delta
     abbr -a -- e hx
+    abbr -a -- tf terraform
     abbr -a -- g git
     abbr -a -- gs git status -sb
     abbr -a -- lg lazygit
