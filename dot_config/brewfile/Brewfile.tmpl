@@ -3,7 +3,7 @@ tap "homebrew/services"
 tap "rsteube/tap"
 tap "lindell/multi-gitter"
 tap "hashicorp/tap"
-{{ if eq .chezmoi.os "darwin" -}}
+{{ if eq .osid "darwin" -}}
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 cask "font-fira-code"

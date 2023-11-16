@@ -1,9 +1,9 @@
 #!/bin/bash
 
-{{ if eq .chezmoi.osRelease.id "fedora" -}}
+{{ if eq .osid "linux-fedora" -}}
 sudo ~/.scripts/fedora_gnome_install_root.sh
 ~/.scripts/fedora_gnome_install_user.sh
-{{- end }}
+{{- end -}}
 
 # Install brew
 command -v brew >/dev/null || { sudo -v && NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }

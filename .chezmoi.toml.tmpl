@@ -2,10 +2,18 @@
 {{- $name := promptString "Git username for the author/committer" "sadamczyk" }}
 {{- $wezterm := false -}}{{/* true if this machine uses wezterm as terminal */}}
 
+{{/* Easier handling of different OSes */}}
+{{/* https://www.chezmoi.io/user-guide/machines/linux/ */}}
+{{- $osid := .chezmoi.os -}}
+{{- if hasKey .chezmoi.osRelease "id" -}}
+{{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
+{{- end -}}
+
 [data]
     email = {{ $email | quote }}
     name = {{ $name | quote }}
     wezterm = {{ $wezterm }}
+    osid = {{ $osid | quote }}
 
 [cd]
     command = "fish"
