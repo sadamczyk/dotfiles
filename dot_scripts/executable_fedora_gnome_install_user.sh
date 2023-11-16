@@ -1,9 +1,12 @@
 #!/bin/sh
 # Non-root user installs
 
-flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+# Install LSPs
+# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
+npm install -g typescript typescript-language-server
 
 # GNOME settings & extensions
+flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:backspace']" # Set Capslock as Escape
 pip3 install --upgrade gnome-extensions-cli
 
