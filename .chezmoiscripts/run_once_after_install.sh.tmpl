@@ -16,3 +16,8 @@ gh auth status >/dev/null || gh auth login
 # Install fisher
 fish -c 'type -q fisher >/dev/null || begin; curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update; end'
 
+# Install go tools
+# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers#go
+go install golang.org/x/tools/gopls@latest          # LSP
+go install github.com/go-delve/delve/cmd/dlv@latest # Debugger
+go install golang.org/x/tools/cmd/goimports@latest  # Formatter

@@ -14,3 +14,8 @@ args = [ "language-server" ]
 name = "php"
 language-servers = [ "phpactor" ]
 
+# Go
+[[language]]
+name = "go"
+auto-format = true
+formatter = { command = "goimports" }
