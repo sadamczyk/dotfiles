@@ -4,9 +4,6 @@
 
 set -e
 
-# Update kitty theme
-kitty +kitten themes --reload-in=all Solarized Light
-
 # Update Helix Editor config to use light theme.
 sed -i 's/theme = ".*"/theme = "solarized_light"/' ${HOME}/.config/helix/config.toml
 pkill -USR1 hx || true
