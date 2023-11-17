@@ -1,6 +1,5 @@
 {{- $email := promptString "Git email address for the author/committer" }}
 {{- $name := promptString "Git username for the author/committer" "sadamczyk" }}
-{{- $wezterm := true -}}{{/* true if this machine uses wezterm as terminal */}}
 
 {{/* Easier handling of different OSes */}}
 {{/* https://www.chezmoi.io/user-guide/machines/linux/ */}}
@@ -12,7 +11,6 @@
 [data]
     email = {{ $email | quote }}
     name = {{ $name | quote }}
-    wezterm = {{ $wezterm }}
     osid = {{ $osid | quote }}
 
 [cd]
