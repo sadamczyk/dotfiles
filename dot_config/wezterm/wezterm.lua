@@ -4,6 +4,8 @@ local wezterm = require 'wezterm';
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   default_prog = {"wsl.exe", "--exec", "/usr/bin/fish"}
+elseif wezterm.target_triple == "x86_64-apple-darwin" then
+  default_prog = {"/usr/local/bin/fish"}
 else
   default_prog = {"fish"}
 end
