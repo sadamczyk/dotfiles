@@ -23,3 +23,9 @@ README.md
 .scripts/fedora_gnome_install_user.sh
 {{- end -}}
 
+{{ if ne .chezmoi.hostname "lenovo-fedora" -}}
+# Ignore files for Lenovo laptop running Fedora
+.config/easyeffects
+autostart/easyeffects-service.desktop
+{{- end }}
+

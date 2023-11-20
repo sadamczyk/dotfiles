@@ -1,0 +1,6 @@
+{
+    "device": "alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.iec958-stereo",
+    "device-description": "HyperX 7.1 Audio Digital Stereo (IEC958)",
+    "device-profile": "iec958-stereo-output",
+    "preset-name": "Bass Enhancing + Perfect EQ"
+}
