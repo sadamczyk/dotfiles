@@ -8,6 +8,11 @@ npm install -g typescript typescript-language-server
 # GNOME settings & extensions
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:backspace']" # Set Capslock as Escape
+gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts [] \
+  && gsettings set org.gnome.desktop.wm.keybindings close "['<Super>Escape']" # Close window (removes conflicting shortcut)
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']" # Open file explorer
+gsettings set org.gnome.desktop.wm.keybindings switch-group [] \
+  && gsettings set org.gnome.desktop.wm.keybindings cycle-group "['<Alt>grave']" # Switch between windows of an app directly
 pip3 install --upgrade gnome-extensions-cli
 
 # Interactive / manual commands at the end
