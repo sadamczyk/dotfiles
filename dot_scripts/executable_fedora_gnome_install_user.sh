@@ -1,6 +1,9 @@
 #!/bin/sh
 # Non-root user installs
 
+# Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
+pip3 install --upgrade gita
+
 # Install LSPs
 # https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
 npm install -g typescript typescript-language-server
