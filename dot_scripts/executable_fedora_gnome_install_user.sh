@@ -7,6 +7,7 @@ pip3 install --upgrade gita
 # Install LSPs
 # https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
 npm install -g typescript typescript-language-server
+pip3 install --upgrade 'python-lsp-server[all]'
 
 # GNOME settings & extensions
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
