@@ -14,6 +14,7 @@ dnf install -y \
   python3-pip \
   fish \
   easyeffects \
+  gcc-c++ \
   procps-ng curl file git # brew dependencies https://docs.brew.sh/Homebrew-on-Linux#requirements
 
 # Install DBeaver
