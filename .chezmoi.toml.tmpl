@@ -1,5 +1,10 @@
+{{- $work := promptBoolOnce . "work" "Is this a work device?" false -}}
 {{- $email := promptStringOnce . "email" "Git email address for the author/committer" -}}
-{{- $name := promptStringOnce . "name" "Git username for the author/committer" "sadamczyk" -}}
+{{- $defaultName := "sadamczyk" -}}
+{{- if $work -}}
+{{-   $defaultName = "Sebastian Adamczyk" -}}
+{{- end -}}
+{{- $name := promptStringOnce . "name" "Git username for the author/committer" $defaultName -}}
 
 {{- /* Easier handling of different OSes */ -}}
 {{- /* https://www.chezmoi.io/user-guide/machines/linux/ */ -}}
@@ -12,6 +17,7 @@
     email = {{ $email | quote }}
     name = {{ $name | quote }}
     osid = {{ $osid | quote }}
+    work = {{ $work }}
 
 [cd]
     command = "fish"
