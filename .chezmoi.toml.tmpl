@@ -1,8 +1,8 @@
-{{- $email := promptString "Git email address for the author/committer" }}
-{{- $name := promptString "Git username for the author/committer" "sadamczyk" }}
+{{- $email := promptStringOnce . "email" "Git email address for the author/committer" -}}
+{{- $name := promptStringOnce . "name" "Git username for the author/committer" "sadamczyk" -}}
 
-{{/* Easier handling of different OSes */}}
-{{/* https://www.chezmoi.io/user-guide/machines/linux/ */}}
+{{- /* Easier handling of different OSes */ -}}
+{{- /* https://www.chezmoi.io/user-guide/machines/linux/ */ -}}
 {{- $osid := .chezmoi.os -}}
 {{- if hasKey .chezmoi.osRelease "id" -}}
 {{-   $osid = printf "%s-%s" .chezmoi.os .chezmoi.osRelease.id -}}
