@@ -29,7 +29,7 @@ rm dbeaver-ce-latest-stable.x86_64.rpm
 dnf -y install dnf-plugins-core \
   && dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo \
   && dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin \
-  && usermod -aG docker $USER \
+  && usermod -aG docker $SUDO_USER \
   && systemctl enable docker.service \
   && systemctl enable containerd.service \
   && sed -i 's/LimitNOFILE=infinity/LimitNOFILE=1024/' /usr/lib/systemd/system/docker.service
