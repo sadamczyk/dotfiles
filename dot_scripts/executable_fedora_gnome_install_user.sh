@@ -10,8 +10,6 @@ npm install -g typescript typescript-language-server
 pip3 install --upgrade 'python-lsp-server[all]'
 
 # GNOME settings & extensions
-test -d ~/Projects || mkdir -p ~/Projects
-test -d ~/Apps || mkdir -p ~/Apps
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:backspace']" # Set Capslock as Escape
 gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts [] \
