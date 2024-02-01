@@ -42,6 +42,7 @@ return {
   keys = {
     {key="w", mods="CTRL|SHIFT", action=wezterm.action{CloseCurrentTab={confirm=false}}}, -- don't confirm closing tabs
     {key="d", mods="CTRL|SHIFT", action=wezterm.action.SplitHorizontal{domain = 'CurrentPaneDomain'}},
+    {key="d", mods="CTRL|SHIFT|ALT", action=wezterm.action.SplitVertical{domain = 'CurrentPaneDomain'}},
   },
 }
 
