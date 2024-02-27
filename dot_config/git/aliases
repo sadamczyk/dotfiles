@@ -14,6 +14,7 @@
     # Shows local and remote branches.
     bra = branch -a
 
+    c = commit
     cm = commit -m
     cam = commit -am
     cf = commit --fixup
@@ -22,6 +23,8 @@
     cp = cherry-pick
     d = diff
     ds = diff --staged
+    m = merge
+    mm = merge origin/master
 
     # Removes branches that have been merged with master (delete merged).
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
@@ -40,12 +43,12 @@
     puf = push -f
 
     # Get the main branch, good enough for 99% of cases
-    m = !git branch | cut -c 3- | grep -E '^master$|^main$'
+    main = !git branch | cut -c 3- | grep -E '^master$|^main$'
 
     # Rebases
     rb = rebase -i
-    rbm = !git rebase -i $( git m )
-    rbo = !git rebase -i "origin/$( git m )"
+    rbm = !git rebase -i $( git main )
+    rbo = !git rebase -i "origin/$( git main )"
 
     # Reset
     rh = "!f() { git reset --hard ${1-HEAD}; }; f"
