@@ -4,6 +4,10 @@ dnf upgrade --refresh -y
 
 test -f /usr/bin/open || ln -s /usr/bin/xdg-open /usr/bin/open
 
+# https://www.sublimetext.com/docs/linux_repositories.html#dnf
+rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+
 dnf copr enable -y wezfurlong/wezterm-nightly
 dnf config-manager --set-enabled google-chrome
 dnf groupinstall -y 'Development Tools'
@@ -15,6 +19,8 @@ dnf install -y \
   fish \
   easyeffects \
   gcc-c++ \
+  sublime-text \
+  sublime-merge \
   procps-ng curl file git # brew dependencies https://docs.brew.sh/Homebrew-on-Linux#requirements
 
 # Install DBeaver
