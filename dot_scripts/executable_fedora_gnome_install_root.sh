@@ -4,10 +4,6 @@ dnf upgrade --refresh -y
 
 test -f /usr/bin/open || ln -s /usr/bin/xdg-open /usr/bin/open
 
-# https://tableplus.com/blog/2019/10/tableplus-linux-installation.html#dnf
-rpm -v --import https://yum.tableplus.com/apt.tableplus.com.gpg.key
-dnf config-manager --add-repo https://yum.tableplus.com/rpm/x86_64/tableplus.repo
-
 dnf copr enable -y wezfurlong/wezterm-nightly
 dnf config-manager --set-enabled google-chrome
 dnf groupinstall -y 'Development Tools'
@@ -19,7 +15,6 @@ dnf install -y \
   fish \
   easyeffects \
   gcc-c++ \
-  tableplus \
   procps-ng curl file git # brew dependencies https://docs.brew.sh/Homebrew-on-Linux#requirements
 
 # Install DBeaver
