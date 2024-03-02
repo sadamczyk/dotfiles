@@ -9,8 +9,12 @@ pip3 install --upgrade gita
 npm install -g typescript typescript-language-server
 pip3 install --upgrade 'python-lsp-server[all]'
 
-# GNOME settings & extensions
+# Flatpak
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update --noninteractive -y
+flatpak uninstall --unused
+
+# GNOME settings & extensions
 gsettings set org.gnome.desktop.input-sources xkb-options "['caps:backspace']" # Set Capslock as Escape
 gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts [] \
   && gsettings set org.gnome.desktop.wm.keybindings close "['<Super>Escape']" # Close window (removes conflicting shortcut)
