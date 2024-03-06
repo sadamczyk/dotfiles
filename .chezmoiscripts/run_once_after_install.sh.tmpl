@@ -1,12 +1,16 @@
 #!/bin/bash
 
 {{ if eq .osid "linux-fedora" -}}
+{{- if .sudo -}}
 sudo ~/.scripts/fedora_gnome_install_root.sh
+{{ end -}}
 ~/.scripts/fedora_gnome_install_user.sh
 {{- end -}}
 
+{{ if .sudo -}}
 # Install brew
 command -v brew >/dev/null || { sudo -v && NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
+{{ end -}}
 source ~/.bash_profile
 
 # Setup gh-cli
