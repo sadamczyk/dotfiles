@@ -11,26 +11,27 @@ else
 end
 
 -- Automatically switch colorscheme based on OS appearance
--- https://wezfurlong.org/wezterm/config/lua/window/get_appearance.html
+-- https://wezfurlong.org/wezterm/config/lua/wezterm.gui/get_appearance.html
+-- wezterm.gui is not available to the mux server, so take care to
+-- do something reasonable when this config is evaluated by the mux
+function get_appearance()
+  -- get_appearance currently bugged. https://github.com/wez/wezterm/issues/4985
+  -- if wezterm.gui then
+  --   return wezterm.gui.get_appearance()
+  -- end
+  return 'Dark'
+end
+
 function scheme_for_appearance(appearance)
-  if appearance:find("Dark") then
-    return "Solarized (dark) (terminal.sexy)"
-  else
+  if appearance:find 'Light' then
     return "Solarized (light) (terminal.sexy)"
+  else
+    return "Solarized (dark) (terminal.sexy)"
   end
 end
 
-wezterm.on("window-config-reloaded", function(window, pane)
-  local overrides = window:get_config_overrides() or {}
-  local appearance = window:get_appearance()
-  local scheme = scheme_for_appearance(appearance)
-  if overrides.color_scheme ~= scheme then
-    overrides.color_scheme = scheme
-    window:set_config_overrides(overrides)
-  end
-end)
-
 return {
+  color_scheme = scheme_for_appearance(get_appearance()),
   default_prog = default_prog,
   exit_behavior = "Close", -- remove after new release, "CloseOnCleanExit" is the default!
   font_size = 11,
