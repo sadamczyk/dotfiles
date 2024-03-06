@@ -21,6 +21,8 @@ README.md
 # Ignore fedora files
 .scripts/fedora_gnome_install_root.sh
 .scripts/fedora_gnome_install_user.sh
+{{- else if not .sudo -}}
+.scripts/fedora_gnome_install_root.sh
 {{- end -}}
 
 {{ if ne .chezmoi.hostname "lenovo-fedora" -}}
