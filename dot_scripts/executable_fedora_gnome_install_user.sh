@@ -38,9 +38,13 @@ pip3 install --upgrade gnome-extensions-cli
 
 # Interactive / manual commands at the end
 # The prompt for the installation of the GNOME extensions times out quite quickly,
-# so run gcloud init first instead, since it also requires confirmation, but doesn't timeout.
+# so run gcloud init (or read) first instead, since it also requires confirmation, but doesn't timeout.
 # Gives some time to come back to the machine after all the long previous installation steps
+{{ if eq .work true -}}
 test -d ~/.config/gcloud/ || gcloud init
+{{- else -}}
+read -p "Almost done! Press the ANY key to continue... :-)" -n 1 -s
+{{- end }}
 
 gext update --install -y \
   another-window-session-manager@gmail.com \
@@ -55,10 +59,12 @@ gext update --install -y \
     gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@romainvigier.fr/schemas/ set org.gnome.shell.extensions.nightthemeswitcher.gtk-variants enabled true;
   }
 
+{{ if eq .work true -}}
 # Programs that need to be installed manually
 command -v slack >/dev/null || {
   google-chrome https://slack.com/intl/de-de/downloads/linux 2>/dev/null &
   google-chrome https://www.jetbrains.com/de-de/phpstorm/download/#section=linux 2>/dev/null &
   sleep 5 # Give browser a moment to open
 }
+{{- end }}
 
