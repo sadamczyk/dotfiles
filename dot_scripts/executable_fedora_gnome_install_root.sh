@@ -54,3 +54,15 @@ EOM
 dnf install -y libxcrypt-compat.x86_64 \
   && dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin
 
+# Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
+# making them available to all users that way
+su $SUDO_USER
+
+pip3 install --upgrade \
+  gita \ # Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
+  gnome-extensions-cli
+
+# Install LSPs
+# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
+npm install -g typescript typescript-language-server
+pip3 install --upgrade 'python-lsp-server[all]'

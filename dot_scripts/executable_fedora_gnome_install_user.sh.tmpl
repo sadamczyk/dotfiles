@@ -1,14 +1,6 @@
 #!/bin/sh
 # Non-root user installs
 
-# Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
-pip3 install --upgrade gita
-
-# Install LSPs
-# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
-npm install -g typescript typescript-language-server
-pip3 install --upgrade 'python-lsp-server[all]'
-
 # Flatpak
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update --noninteractive -y
@@ -34,7 +26,6 @@ gsettings set org.gnome.desktop.screensaver lock-delay 30 # Lock screen 30s afte
 gsettings set org.gnome.desktop.privacy recent-files-max-age 30 # Only remember recently used files for 30 days
 gsettings set org.gnome.desktop.privacy remove-old-trash-files true # Automatically delete trash
 gsettings set org.gnome.desktop.privacy remove-old-temp-files true # Automatically delete temp files
-pip3 install --upgrade gnome-extensions-cli
 
 # Interactive / manual commands at the end
 # The prompt for the installation of the GNOME extensions times out quite quickly,
