@@ -1,8 +1,10 @@
 #!/usr/bin/env fish
 
+{{ if .sudo -}}
 # Install all brew packages
 # brewfile hash: {{ include "dot_config/brewfile/Brewfile.tmpl" | sha256sum }}
 brew bundle --file=$HOME/.config/brewfile/Brewfile
+{{- end -}}
 
 # Install fish plugins
 # fisher plugins hash: {{ include "dot_config/private_fish/fish_plugins" | sha256sum }}
