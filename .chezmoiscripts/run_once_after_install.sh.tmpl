@@ -5,7 +5,7 @@
 sudo ~/.scripts/fedora_gnome_install_root.sh
 {{ end -}}
 ~/.scripts/fedora_gnome_install_user.sh
-{{- end -}}
+{{ end -}}
 
 {{ if .sudo -}}
 # Install brew
@@ -14,7 +14,9 @@ command -v brew >/dev/null || { sudo -v && NONINTERACTIVE=1 /bin/bash -c "$(curl
 source ~/.bash_profile
 
 # Setup gh-cli
+{{ if .sudo -}}
 brew bundle --file=.config/brewfile/Brewfile
+{{ end -}}
 gh auth status >/dev/null || gh auth login
 
 # Install fisher
