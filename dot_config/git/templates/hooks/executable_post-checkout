@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+echo "Setting up hooks..."
+
+# Setup protected branches that require confirmation for pushing
+read -p $'List protected branch patterns separated by a |. Wildcards allowed. Leave empty to disable.\n' -r protected_pattern
+sed -i "s/protected_pattern=\"[^\"]*\"/protected_pattern=\"$protected_pattern\"/g" ./.git/hooks/pre-push
+echo "Setup protected branches in ./.git/hooks/pre-push!"
+
+# Setup filter to prevent github backlinks from commit messages in this repo
+read -p "Do you want to prevent Github backlinks from the commit messages in this repo? [y|n] " -n 1 -r prevent_backlinks
+echo
+if echo $prevent_backlinks | grep -vE '^[Yy]$' > /dev/null
+then
+    rm -f ./.git/hooks/commit-msg # Remove the filter hook
+    echo "Deleted ./.git/hooks/commit-msg!"
+fi
+
+# Only run this hook once and then delete it
+echo "Self destructing ./.git/hooks/post-checkout!"
+rm -f "$0"

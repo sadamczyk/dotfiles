@@ -26,6 +26,9 @@
     m = merge
     mm = merge origin/master
 
+    # Simulate a post-init hook. My post-checkout hook requires no args.
+    i = "!git init && test -f ./.git/hooks/post-checkout && ./.git/hooks/post-checkout"
+
     # Removes branches that have been merged with master (delete merged).
     dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d"
 
