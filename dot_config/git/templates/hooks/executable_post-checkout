@@ -3,12 +3,12 @@
 echo "Setting up hooks..."
 
 # Setup protected branches that require confirmation for pushing
-read -p $'List protected branch patterns separated by a |. Wildcards allowed. Leave empty to disable.\n' -r protected_pattern
+read -p $'List protected branch patterns separated by a |. Wildcards allowed. Leave empty to disable.\n' -r protected_pattern </dev/tty
 sed -i "s/protected_pattern=\"[^\"]*\"/protected_pattern=\"$protected_pattern\"/g" ./.git/hooks/pre-push
 echo "Setup protected branches in ./.git/hooks/pre-push!"
 
 # Setup filter to prevent github backlinks from commit messages in this repo
-read -p "Do you want to prevent Github backlinks from the commit messages in this repo? [y|n] " -n 1 -r prevent_backlinks
+read -p "Do you want to prevent Github backlinks from the commit messages in this repo? [y|n] " -n 1 -r prevent_backlinks </dev/tty
 echo
 if echo $prevent_backlinks | grep -vE '^[Yy]$' > /dev/null
 then
