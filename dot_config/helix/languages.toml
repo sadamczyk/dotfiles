@@ -18,7 +18,7 @@ language-servers = [ "phpactor" ]
 [[language]]
 name = "go"
 auto-format = true
-formatter = { command = "goimports" }
+formatter = { command = "gosimports" }
 
 # JSON
 [[language]]
