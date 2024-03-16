@@ -8,8 +8,8 @@ sudo ~/.scripts/fedora_gnome_install_root.sh
 command -v brew >/dev/null || { sudo -v && NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"; }
 {{ end -}}
 
-~/.scripts/install_user.sh
 source ~/.bash_profile
+~/.scripts/install_user.sh
 
 # Setup gh-cli
 gh auth status >/dev/null || gh auth login
