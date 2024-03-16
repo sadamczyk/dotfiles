@@ -36,11 +36,10 @@ brew bundle --file=.config/brewfile/Brewfile
 # Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
 # making them available to all users that way
 # Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
-pip3 install --upgrade \
-  {{ if eq .osid "linux-fedora" -}}
-  gnome-extensions-cli \
-  {{ end -}}
-  gita
+pipx upgrade --install gita
+{{ if eq .osid "linux-fedora" -}}
+pipx upgrade --install gnome-extensions-cli
+{{ end -}}
 {{ end -}}
 
 # Install gh extensions
