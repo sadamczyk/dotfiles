@@ -63,5 +63,4 @@ sudo -u $SUDO_USER pip3 install --upgrade \
 
 # Install LSPs
 # https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
-sudo -u $SUDO_USER npm install -g typescript typescript-language-server
 sudo -u $SUDO_USER pip3 install --upgrade 'python-lsp-server[all]'
