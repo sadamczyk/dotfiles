@@ -60,7 +60,3 @@ dnf install -y libxcrypt-compat.x86_64 \
 sudo -u $SUDO_USER pip3 install --upgrade \
   gita \
   gnome-extensions-cli
-
-# Install LSPs
-# https://github.com/helix-editor/helix/wiki/How-to-install-the-default-language-servers
-sudo -u $SUDO_USER pip3 install --upgrade 'python-lsp-server[all]'
