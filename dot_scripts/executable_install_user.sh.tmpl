@@ -33,6 +33,15 @@ gsettings set org.gnome.desktop.privacy remove-old-temp-files true # Automatical
 {{ if .sudo -}}
 brew bundle --file=.config/brewfile/Brewfile
 source ~/.bash_profile
+
+# Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
+# making them available to all users that way
+# Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
+pip3 install --upgrade \
+  {{ if eq .osid "linux-fedora" -}}
+  gnome-extensions-cli \
+  {{ end -}}
+  gita
 {{ end -}}
 
 # Install gh extensions

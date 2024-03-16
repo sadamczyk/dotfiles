@@ -54,9 +54,3 @@ EOM
 dnf install -y libxcrypt-compat.x86_64 \
   && dnf install -y google-cloud-cli google-cloud-cli-skaffold google-cloud-cli-gke-gcloud-auth-plugin
 
-# Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
-# making them available to all users that way
-# Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
-sudo -u $SUDO_USER pip3 install --upgrade \
-  gita \
-  gnome-extensions-cli
