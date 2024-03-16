@@ -14,6 +14,3 @@ source ~/.bash_profile
 # Setup gh-cli
 gh auth status >/dev/null || gh auth login
 
-# Install fisher
-fish -c 'type -q fisher >/dev/null || begin; curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher update; end'
-
