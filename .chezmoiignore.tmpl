@@ -6,6 +6,12 @@
 LICENSE
 README.md
 
+# TODO Don't use post-checkout hook for now.
+# It breaks brew source installs and similar scripts.
+# It just hangs before the second read.
+# Probably something to do with the /dev/tty, but not sure.
+.config/git/templates/hooks/post-checkout
+
 {{ if ne .osid "darwin" -}}
 # Ignore macOS files.
 .config/zsh
