@@ -42,10 +42,6 @@ pipx upgrade --install gnome-extensions-cli
 {{ end -}}
 {{ end -}}
 
-# Install gh extensions
-gh extension install --force \
-  dlvhdr/gh-dash
-
 # Install fisher, then run update
 fish -c 'type -q fisher >/dev/null || begin; curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source; end; fisher update'
 
@@ -58,6 +54,11 @@ test -d ~/.config/gcloud/ || gcloud init
 {{- else -}}
 read -p "Almost done! Press the ANY key to continue... :-)" -n 1 -s
 {{- end }}
+
+# Setup gh-cli
+gh auth status >/dev/null || gh auth login
+gh extension install --force \
+  dlvhdr/gh-dash
 
 {{ if eq .osid "linux-fedora" -}}
 gext update --install -y \
