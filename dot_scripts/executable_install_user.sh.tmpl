@@ -36,9 +36,10 @@ brew bundle --file=.config/brewfile/Brewfile
 # Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
 # making them available to all users that way
 # Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
-pipx upgrade --install gita
+# TODO: Use pipx upgrade --install once https://github.com/pypa/pipx/pull/1267 actually gets released!
+pipx install gita
 {{ if eq .osid "linux-fedora" -}}
-pipx upgrade --install gnome-extensions-cli
+pipx install --system-site-packages gnome-extensions-cli
 {{ end -}}
 {{ end -}}
 
@@ -61,12 +62,12 @@ gh extension install --force \
   dlvhdr/gh-dash
 
 {{ if eq .osid "linux-fedora" -}}
-gext update --install -y \
+gext --dbus update --install -y \
   another-window-session-manager@gmail.com \
   appindicatorsupport@rgcjonas.gmail.com \
   hotedge@jonathan.jdoda.ca \
-  nightthemeswitcher@romainvigier.fr \
   focused-window-dbus@flexagoon.com \
+  nightthemeswitcher@romainvigier.fr \
   && {
     gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@romainvigier.fr/schemas/ set org.gnome.shell.extensions.nightthemeswitcher.commands sunrise "~/.scripts/sunrise.sh";
     gsettings --schemadir ~/.local/share/gnome-shell/extensions/nightthemeswitcher@romainvigier.fr/schemas/ set org.gnome.shell.extensions.nightthemeswitcher.commands sunset "~/.scripts/sunset.sh";

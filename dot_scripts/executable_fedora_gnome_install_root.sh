@@ -12,6 +12,7 @@ dnf copr enable -y wezfurlong/wezterm-nightly
 dnf config-manager --set-enabled google-chrome
 dnf groupinstall -y 'Development Tools'
 dnf install -y \
+  pipx \
   geary \
   google-chrome-stable \
   wezterm \
