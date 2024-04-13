@@ -11,7 +11,7 @@ if status is-interactive
     abbr -a -- vi nvim
     abbr -a -- vim nvim
     {{ if eq .osid "linux-fedora" -}}
-    abbr -a -- update-system '{{ if .sudo -}} sudo ~/.scripts/fedora_gnome_install_root.sh && {{ end -}} ~/.scripts/fedora_gnome_install_user.sh'
+    abbr -a -- update-system '{{ if .sudo -}} sudo ~/.scripts/fedora_gnome_install_root.sh && {{ end -}} ~/.scripts/install_user.sh'
     {{- end }}
 
     ## Docker
