@@ -36,10 +36,9 @@ brew bundle --file=.config/brewfile/Brewfile
 # Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
 # making them available to all users that way
 # Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
-# TODO: Use pipx upgrade --install once https://github.com/pypa/pipx/pull/1267 actually gets released!
-pipx install gita
+pipx upgrade --install gita
 {{ if eq .osid "linux-fedora" -}}
-pipx install --system-site-packages gnome-extensions-cli
+pipx upgrade --install --system-site-packages gnome-extensions-cli
 {{ end -}}
 {{ end -}}
 
