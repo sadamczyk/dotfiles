@@ -31,7 +31,7 @@ gsettings set org.gnome.desktop.privacy remove-old-temp-files true # Automatical
 
 # Install brew packages
 {{ if .sudo -}}
-brew bundle --file=.config/brewfile/Brewfile
+brew bundle --file={{- printf "%s/" .chezmoi.config.destDir -}}.config/brewfile/Brewfile
 
 # Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
 # making them available to all users that way
