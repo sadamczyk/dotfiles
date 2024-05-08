@@ -15,10 +15,9 @@ end
 -- wezterm.gui is not available to the mux server, so take care to
 -- do something reasonable when this config is evaluated by the mux
 function get_appearance()
-  -- get_appearance currently bugged. https://github.com/wez/wezterm/issues/4985
-  -- if wezterm.gui then
-  --   return wezterm.gui.get_appearance()
-  -- end
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  end
   return 'Dark'
 end
 
