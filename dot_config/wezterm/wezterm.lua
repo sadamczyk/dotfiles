@@ -1,6 +1,7 @@
 -- Set nice hotkeys up with this! https://wezfurlong.org/wezterm/config/keys.html#leader-key
 
 local wezterm = require 'wezterm';
+local act = wezterm.action;
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
   default_prog = {"wsl.exe", "--exec", "/usr/bin/fish"}
@@ -40,9 +41,11 @@ return {
   initial_rows = 500,
   window_close_confirmation = "NeverPrompt",
   keys = {
-    {key="w", mods="CTRL|SHIFT", action=wezterm.action{CloseCurrentTab={confirm=false}}}, -- don't confirm closing tabs
-    {key="d", mods="CTRL|SHIFT", action=wezterm.action.SplitHorizontal{domain = 'CurrentPaneDomain'}},
-    {key="d", mods="CTRL|SHIFT|ALT", action=wezterm.action.SplitVertical{domain = 'CurrentPaneDomain'}},
+    {key="w", mods="CTRL|SHIFT", action=act.CloseCurrentTab{confirm=false}}, -- don't confirm closing tabs
+    {key="d", mods="CTRL|SHIFT", action=act.SplitHorizontal{domain = 'CurrentPaneDomain'}},
+    {key="d", mods="CTRL|SHIFT|ALT", action=act.SplitVertical{domain = 'CurrentPaneDomain'}},
+    {key="PageUp", mods="CTRL|SHIFT", action=act.ScrollToPrompt(-1)},
+    {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(1)},
   },
 }
 
