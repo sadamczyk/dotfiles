@@ -47,6 +47,18 @@ return {
     {key="PageUp", mods="CTRL|SHIFT", action=act.ScrollToPrompt(-1)},
     {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(1)},
   },
+  mouse_bindings = {
+    {
+      event = { Down = { streak = 4, button = 'Left' } },
+      action = act.SelectTextAtMouseCursor 'SemanticZone',
+      mods = 'NONE',
+    },
+    {
+      event = { Up = { streak = 4, button = 'Left' } },
+      action = act.CompleteSelection 'ClipboardAndPrimarySelection',
+      mods = 'NONE',
+    },
+  },
 }
 
 -- Add this option when new release comes out!
