@@ -44,8 +44,8 @@ return {
     {key="w", mods="CTRL|SHIFT", action=act.CloseCurrentTab{confirm=false}}, -- don't confirm closing tabs
     {key="d", mods="CTRL|SHIFT", action=act.SplitHorizontal{domain = 'CurrentPaneDomain'}},
     {key="d", mods="CTRL|SHIFT|ALT", action=act.SplitVertical{domain = 'CurrentPaneDomain'}},
-    {key="PageUp", mods="CTRL|SHIFT", action=act.ScrollToPrompt(-1)},
-    {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(1)},
+    {key="PageUp", mods="CTRL|SHIFT", action=act.ScrollToPrompt(-2)},
+    {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(2)},
   },
   mouse_bindings = {
     {
