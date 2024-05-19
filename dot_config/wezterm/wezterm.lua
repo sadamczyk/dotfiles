@@ -33,6 +33,7 @@ end
 return {
   color_scheme = scheme_for_appearance(get_appearance()),
   default_prog = default_prog,
+  prefer_to_spawn_tabs = true,
   exit_behavior = "Close", -- remove after new release, "CloseOnCleanExit" is the default!
   font_size = 11,
   font = wezterm.font 'DejaVu Sans Mono',
