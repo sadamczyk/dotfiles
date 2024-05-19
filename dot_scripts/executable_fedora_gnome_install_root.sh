@@ -16,6 +16,7 @@ dnf install -y \
   geary \
   google-chrome-stable \
   wezterm \
+  nautilus-python \
   fish \
   easyeffects \
   gcc-c++ \
