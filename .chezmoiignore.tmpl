@@ -18,6 +18,7 @@ README.md
 .zshenv
 {{ else }}
 # Ignore non-macOS files.
+.config/autostart
 .config/gtk-3.0
 .config/gtk-4.0
 .local
@@ -34,6 +35,6 @@ README.md
 {{ if ne .chezmoi.hostname "lenovo-fedora" -}}
 # Ignore files for Lenovo laptop running Fedora
 .config/easyeffects
-autostart/easyeffects-service.desktop
+.config/autostart/easyeffects-service.desktop
 {{- end }}
 
