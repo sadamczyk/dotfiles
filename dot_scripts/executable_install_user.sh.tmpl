@@ -30,17 +30,19 @@ gsettings set org.gnome.desktop.privacy remove-old-temp-files true # Automatical
 gsettings set org.gnome.desktop.sound allow-volume-above-100-percent true # Allow volume to be set higher than 100% (Especially needed on crappy laptop speakers)
 {{ end -}}
 
-# Install brew packages
 {{ if .sudo -}}
+# Install brew packages
 brew bundle --file={{- printf "%s/" .chezmoi.config.destDir -}}.config/brewfile/Brewfile
 
 # Packages installed via brew's pip, npm (etc?) end up available under the linuxbrew home
 # making them available to all users that way
+{{ end -}}
+
+# pipx is installed via rpm because gext requires certain GNOME packages
 # Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
 pipx upgrade --install gita
 {{ if eq .osid "linux-fedora" -}}
 pipx upgrade --install --system-site-packages gnome-extensions-cli
-{{ end -}}
 {{ end -}}
 
 # Install fisher, then run update
