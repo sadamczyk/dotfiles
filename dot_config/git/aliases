@@ -15,6 +15,7 @@
     bra = branch -a
 
     c = commit
+    cc = commit -am "wip"
     cm = commit -m
     cam = commit -am
     cf = commit --fixup
