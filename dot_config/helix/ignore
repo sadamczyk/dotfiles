@@ -1,7 +1,11 @@
 # Unignore certain git-ignored files
 !/.env
-!/frontend/vendor # Limit to /eos maybe?
+!/frontend/vendor
+/frontend/vendor/*
+!/frontend/vendor/eos
 !/frontend/app/Resources/config/parameters.yml
-!/backend/vendor # Limit to /eos maybe?
+!/backend/vendor
+/backend/vendor/*
+!/backend/vendor/eos
 !/backend/app/Resources/config/parameters.yml
 
