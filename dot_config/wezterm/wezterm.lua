@@ -47,6 +47,8 @@ return {
     {key="d", mods="CTRL|SHIFT|ALT", action=act.SplitVertical{domain = 'CurrentPaneDomain'}},
     {key="PageUp", mods="CTRL|SHIFT", action=act.ScrollToPrompt(-2)},
     {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(2)},
+    {key="h", mods="CTRL|SHIFT", action=act.SendString 'bin/console c:j:l '},
+    {key="j", mods="CTRL|SHIFT", action=act.Multiple{act.SendString 'bin/console c:j:e -vvv -iseb ""', act.SendKey { key = 'LeftArrow' }}},
   },
   mouse_bindings = {
     {
