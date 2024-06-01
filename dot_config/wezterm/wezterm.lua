@@ -52,7 +52,16 @@ return {
     {key="PageUp", mods="CTRL|SHIFT", action=act.ScrollToPrompt(-2)},
     {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(2)},
     {key="h", mods="CTRL|SHIFT", action=act.SendString 'bin/console c:j:l '},
-    {key="j", mods="CTRL|SHIFT", action=act.Multiple{act.SendString 'bin/console c:j:e -vvv -iseb ""', act.SendKey { key = 'LeftArrow' }}},
+    {key="j", mods="CTRL|SHIFT", action=act.QuickSelectArgs {
+      label = 'paste',
+      patterns = {
+        'Eos\\\\Package\\\\Cron\\\\Model\\\\ServiceSchedule#[0-9]+'
+      },
+      action = wezterm.action_callback(function(window, pane)
+        local selection = 'bin/console c:j:e -vvv -iseb "' .. window:get_selection_text_for_pane(pane) .. '" '
+        pane:send_text(selection)
+      end)
+    }},
   },
   mouse_bindings = {
     {
