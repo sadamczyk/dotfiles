@@ -45,6 +45,10 @@ return {
     {key="w", mods="CTRL|SHIFT", action=act.CloseCurrentTab{confirm=false}}, -- don't confirm closing tabs
     {key="d", mods="CTRL|SHIFT", action=act.SplitHorizontal{domain = 'CurrentPaneDomain'}},
     {key="d", mods="CTRL|SHIFT|ALT", action=act.SplitVertical{domain = 'CurrentPaneDomain'}},
+    {key="LeftArrow", mods="CTRL|SHIFT|ALT", action=act.AdjustPaneSize{'Left', 5}},
+    {key="RightArrow", mods="CTRL|SHIFT|ALT", action=act.AdjustPaneSize{'Right', 5}},
+    {key="UpArrow", mods="CTRL|SHIFT|ALT", action=act.AdjustPaneSize{'Up', 5}},
+    {key="DownArrow", mods="CTRL|SHIFT|ALT", action=act.AdjustPaneSize{'Down', 5}},
     {key="PageUp", mods="CTRL|SHIFT", action=act.ScrollToPrompt(-2)},
     {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(2)},
     {key="h", mods="CTRL|SHIFT", action=act.SendString 'bin/console c:j:l '},
