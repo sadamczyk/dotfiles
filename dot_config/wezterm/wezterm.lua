@@ -41,6 +41,7 @@ return {
   initial_cols = 500,
   initial_rows = 500,
   window_close_confirmation = "NeverPrompt",
+  leader = { key = 'Space', mods = 'CTRL', timeout_milliseconds = 3000 },
   keys = {
     {key="w", mods="CTRL|SHIFT", action=act.CloseCurrentTab{confirm=false}}, -- don't confirm closing tabs
     {key="d", mods="CTRL|SHIFT", action=act.SplitHorizontal{domain = 'CurrentPaneDomain'}},
