@@ -14,6 +14,20 @@ gsettings set org.gnome.mutter.wayland.keybindings restore-shortcuts [] \
 gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>e']" # Open file explorer
 gsettings set org.gnome.desktop.wm.keybindings switch-group [] \
   && gsettings set org.gnome.desktop.wm.keybindings cycle-group "['<Alt>grave']" # Switch between windows of an app directly
+
+# Get rid of workspaces. I don't use them. Also free up the used shortcuts.
+gsettings set org.gnome.mutter dynamic-workspaces false
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 1
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"
+
+gsettings set org.gnome.desktop.interface enable-hot-corners false
+gsettings set org.gnome.mutter edge-tiling true
+gsettings set org.gnome.desktop.interface show-battery-percentage true
 gsettings set org.gnome.desktop.peripherals.mouse accel-profile flat # Disable mouse acceleration
 gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false # Disable natural scrolling for mice
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true # Tap touchpad to click
