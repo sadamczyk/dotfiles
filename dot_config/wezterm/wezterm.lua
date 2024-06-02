@@ -45,6 +45,16 @@ config.clean_exit_codes = {130} -- For ^D afer ^C. https://wezfurlong.org/wezter
 config.window_close_confirmation = "NeverPrompt"
 
 
+-- Terminal
+  -- Hyperlinks
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
+    -- JIRA
+table.insert(config.hyperlink_rules, {
+  regex = [[[A-Z0-9]{2,8}-\d{2,6}]],
+  format = 'https://evenonsunday.atlassian.net/browse/$0',
+})
+
+
 -- Mouse
 config.mouse_bindings = {
   {
