@@ -7,6 +7,3 @@ set -e
 # Update Helix Editor config to use light theme.
 sed -i 's/theme = ".*"/theme = "solarized_light"/' ${HOME}/.config/helix/config.toml
 pkill -USR1 hx || true
-
-# Update git-delta to use light theme
-sed -i 's/light = .*/light = true/' ${HOME}/.config/git/config

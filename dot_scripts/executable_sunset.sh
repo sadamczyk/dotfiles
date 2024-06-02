@@ -6,6 +6,3 @@ set -e
 
 sed -i 's/theme = ".*"/theme = "solarized_dark"/' ${HOME}/.config/helix/config.toml
 pkill -USR1 hx || true
-
-# Update git-delta to use dark theme
-sed -i 's/light = .*/light = false/' ${HOME}/.config/git/config

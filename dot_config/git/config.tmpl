@@ -4,20 +4,6 @@
 	excludesfile = ~/.config/git/ignore_global # Store global exclusions into a custom file.
 	pager = delta
 [delta]
-	{{ if eq .osid "darwin" -}}
-	{{- if eq "Dark" (output "sh" "-c" "defaults read -g AppleInterfaceStyle 2>/dev/null || true" | trim) -}}
-	light = false
-	{{- else -}}
-	light = true
-	{{- end -}}
-	{{- else -}}
-	{{- if eq "prefer-dark" (output "gsettings" "get" "org.gnome.desktop.interface" "color-scheme" | trim | trimAll "'") -}}
-	light = false
-	{{- else -}}
-	light = true
-	{{- end -}}
-	{{- end }}
-
 	hyperlinks = true
 	navigate = true # use n and N to move between diff sections
 	side-by-side = true
