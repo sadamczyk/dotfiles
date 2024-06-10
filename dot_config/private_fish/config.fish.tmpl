@@ -35,12 +35,6 @@ if status is-interactive
 end
 
 export EDITOR="hx"
-export PATH="$HOME/go/bin:$HOME/.scripts:/usr/local/bin:$PATH"
-{{ if eq .osid "darwin" -}}
-eval "$(brew shellenv fish)"
-{{ else }}
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
-{{- end }}
 
 # https://rsteube.github.io/carapace-bin/setup.html
 export CARAPACE_MATCH=CASE_INSENSITIVE

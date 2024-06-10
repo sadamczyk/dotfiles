@@ -1,0 +1,9 @@
+export PATH="$HOME/go/bin:$HOME/.scripts:/usr/local/bin:$PATH"
+
+# Init brew
+{{ if eq .osid "darwin" -}}
+eval "$(brew shellenv fish)"
+{{ else }}
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)"
+{{- end }}
+
