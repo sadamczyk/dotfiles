@@ -20,11 +20,11 @@ if status is-interactive
     ## Docker
     abbr -a -- d docker
     abbr -a -- dc docker compose
-    abbr -a -- dcb 'docker compose build'
+    abbr -a -- dcb 'docker compose --profile "*" build'
     abbr -a -- dcd 'docker compose --profile "*" down'
-    abbr -a -- dcu 'docker compose up -d'
-    abbr -a -- dcub 'docker compose up --build -d'
     abbr -a -- dps 'docker ps'
+    abbr -a -- dcu 'docker compose --profile "*" up -d'
+    abbr -a -- dcub 'docker compose --profile "*" up --build -d'
 
     # Color theme
     fish_config theme choose Bay\ Cruise
