@@ -50,7 +50,7 @@ config.window_close_confirmation = "NeverPrompt"
 config.hyperlink_rules = wezterm.default_hyperlink_rules()
     -- JIRA
 table.insert(config.hyperlink_rules, {
-  regex = [[[A-Z0-9]{2,8}-\d{2,6}]],
+  regex = [[[A-Z]{1}[A-Z0-9]{1,7}-\d{2,6}]],
   format = 'https://evenonsunday.atlassian.net/browse/$0',
 })
 
