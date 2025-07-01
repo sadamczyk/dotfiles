@@ -32,6 +32,8 @@ c = "change_selection_noyank"
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 C-e = [":new", ":insert-output lf", ":buffer-close!", ":redraw"]
 X = ["extend_line_up", "extend_to_line_bounds"]
+"*" = "search_selection"
+"A-*" = "search_selection_detect_word_boundaries"
 C-f =  "@*<space>/<ret>"
 
 [keys.normal.g]
