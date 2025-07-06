@@ -30,5 +30,10 @@ dnf -y install dnf-plugins-core \
   && systemctl enable containerd.service \
   && sed -i 's/LimitNOFILE=infinity/LimitNOFILE=1024/' /usr/lib/systemd/system/docker.service
 
-# Enable services
+# Enable services and open ports for local discovery
 systemctl enable --now syncthing@$SUDO_USER.service
+# https://docs.syncthing.net/users/firewall.html#firewalld
+if ! firewall-cmd --zone=public --query-service=syncthing &>/dev/null; then
+  firewall-cmd --zone=public --add-service=syncthing --permanent \
+    && firewall-cmd --reload
+fi
