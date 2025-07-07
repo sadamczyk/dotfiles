@@ -93,7 +93,7 @@ config.keys = {
   {key="PageDown", mods="CTRL|SHIFT", action=act.ScrollToPrompt(2)},
 
   -- Custom functions
-  {key="h", mods="CTRL|SHIFT", action=act.SendString 'bin/console c:j:l '},
+  {key="h", mods="CTRL|SHIFT", action=act.SendString 'bin/console c:j:l -v '},
   {key="j", mods="CTRL|SHIFT", action=act.QuickSelectArgs {
     label = 'paste',
     patterns = {
