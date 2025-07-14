@@ -17,8 +17,8 @@ if status is-interactive
     abbr -a -- kl 'kubectl logs '
     # rcl = Regenerate Composer Locks
     abbr -a -- rcl 'rm -f backend/composer.lock && docker compose run --rm --build php-backend composer install --prefer-dist --no-interaction && rm -f frontend/composer.lock && docker compose run --rm --build php-frontend composer install --prefer-dist --no-interaction'
-    abbr -a -- rclb 'rm -f backend/composer.lock && docker compose run --rm --build php-backend composer install --prefer-dist --no-interaction'
-    abbr -a -- rclf 'rm -f frontend/composer.lock && docker compose run --rm --build php-frontend composer install --prefer-dist --no-interaction'
+    abbr -a -- rclb 'docker compose run --build --rm php-backend composer update --lock'
+    abbr -a -- rclf 'docker compose run --build --rm php-frontend composer update --lock'
     # rhl = Regenerate Helm Lock
     abbr -a -- rhl 'rm -f k8s/helm/*/Chart.lock ; helm dep update k8s/helm/*/ ;'
 end
