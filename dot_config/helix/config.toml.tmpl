@@ -23,6 +23,7 @@ git-ignore = true
 [editor.soft-wrap]
 enable = true
 
+# Basically add every keymap in normal to select as well
 [keys.normal]
 # Might not be needed in the future? https://github.com/helix-editor/helix/issues/3001
 A-d = "delete_selection"
@@ -40,5 +41,17 @@ C-f =  "@*<space>/<ret>"
 e = "goto_file_end" # Fix for files without a newline at the end
 
 [keys.select]
+# Might not be needed in the future? https://github.com/helix-editor/helix/issues/3001
+A-d = "delete_selection"
+d = "delete_selection_noyank"
+A-c = "change_selection"
+c = "change_selection_noyank"
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
+C-e = [":new", ":insert-output lf", ":buffer-close!", ":redraw"]
 X = ["extend_line_up", "extend_to_line_bounds"]
+"*" = "search_selection"
+"A-*" = "search_selection_detect_word_boundaries"
 C-f =  "@*<space>/<ret>"
+
+[keys.select.g]
+e = "extend_to_file_end" # Fix for files without a newline at the end
