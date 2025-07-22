@@ -26,3 +26,10 @@ name = "json"
 # Until https://github.com/helix-editor/helix/issues/279 is resolved
 # do not auto format, because it almost always indents wrong
 auto-format = false
+
+# XML
+[[language]]
+name = "xml"
+file-types = [ "xml", "svg", "xsd", "xslt", "xsl" ]
+auto-format = false
+formatter = { command = "xmllint", args = ["--format", "-"] }
