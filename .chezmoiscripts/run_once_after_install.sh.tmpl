@@ -6,7 +6,7 @@ set -e
 echo "Running root installer..."
 {{ if eq .osid "linux-fedora" -}}
 sudo ~/.scripts/fedora_gnome_install_root.sh
-{{ else if eq .osid "linux-nobara" -}}
+{{ else if (or (eq .osid "linux-nobara") (eq .osid "linux-ultramarine")) -}}
 sudo ~/.scripts/nobara_gnome_install_root.sh
 {{- end }}
 

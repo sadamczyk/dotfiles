@@ -1,7 +1,7 @@
 #!/bin/sh
 # Non-root user installs
 
-{{ if (or (eq .osid "linux-fedora") (eq .osid "linux-nobara")) -}}
+{{ if (or (eq .osid "linux-fedora") (eq .osid "linux-nobara") (eq .osid "linux-ultramarine")) -}}
 # Flatpak
 flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak update --noninteractive -y
@@ -59,7 +59,7 @@ brew bundle --file={{- printf "%s/" .chezmoi.config.destDir -}}.config/brewfile/
 # pipx is installed via rpm because gext requires certain GNOME packages
 # Install gita via brew once resolved: https://github.com/nosarthur/gita/issues/80
 pipx upgrade --install gita
-{{ if (or (eq .osid "linux-fedora") (eq .osid "linux-nobara")) -}}
+{{ if (or (eq .osid "linux-fedora") (eq .osid "linux-nobara") (eq .osid "linux-ultramarine")) -}}
 pipx upgrade --install --system-site-packages gnome-extensions-cli
 {{ end -}}
 
@@ -89,7 +89,7 @@ gh auth status >/dev/null || gh auth login
 gh extension install --force \
   dlvhdr/gh-dash
 
-{{ if (or (eq .osid "linux-fedora") (eq .osid "linux-nobara")) -}}
+{{ if (or (eq .osid "linux-fedora") (eq .osid "linux-nobara") (eq .osid "linux-ultramarine")) -}}
 # another-window-session-manager@gmail.com \ # Not updated since Gnome 46. Use fork: https://github.com/nlpsuge/gnome-shell-extension-another-window-session-manager/pull/120
 gext --dbus update --install -y \
   appindicatorsupport@rgcjonas.gmail.com \

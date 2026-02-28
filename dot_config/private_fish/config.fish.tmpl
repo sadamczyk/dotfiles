@@ -15,7 +15,7 @@ if status is-interactive
     abbr -a -- vim nvim
     {{ if eq .osid "linux-fedora" -}}
     abbr -a -- update-system '{{ if .sudo -}} sudo ~/.scripts/fedora_gnome_install_root.sh && {{ end -}} ~/.scripts/install_user.sh'
-    {{ else if eq .osid "linux-nobara" -}}
+    {{ else if (or (eq .osid "linux-nobara") (eq .osid "linux-ultramarine")) -}}
     abbr -a -- update-system '{{ if .sudo -}} sudo ~/.scripts/nobara_gnome_install_root.sh && {{ end -}} ~/.scripts/install_user.sh'
     {{- end }}
 
